@@ -56,13 +56,13 @@ for(i = 0; i < myTeam.length; i++) {
 
 // stampo le stesse informazioni su DOM sottoforma di stringhe
 
+
+
 let containerEl = document.getElementById('container');
 let cardsContEl = document.getElementById('cards-container');
 
 
-let cardImg = document.createElement('img');
-let cardName = document.createElement('span');
-let cardRole = document.createElement('span');
+
 
 
 for (i = 0; i < myTeam.length; i++) {
@@ -70,12 +70,21 @@ for (i = 0; i < myTeam.length; i++) {
 }
 
 let allCards = document.querySelectorAll('.card');
-console.log(allCards);
+
 for(i = 0; i < allCards.length; i++) {
     shapeCard(allCards[i]);
 }
 
-// shapeCard(allCards);
+let allImages = document.querySelectorAll('.card-image');
+populateImgs(myTeam, allImages);
+
+let allNames = document.querySelectorAll('.card-name');
+populateNames(myTeam, allNames);
+
+let allRoles = document.querySelectorAll('.card-role');
+populateRoles(myTeam, allRoles);
+
+
 
 
 // for (i = 0; i < myTeam.length; i++) {
@@ -109,9 +118,36 @@ function createCard(container) {
     newDiv.classList.add('card');
 }
 
-
+// creo funzione per strutturare gli elementi all'interno della card
 function shapeCard(card) {
+    let cardImg = document.createElement('img');
+    let cardName = document.createElement('span');
+    let cardRole = document.createElement('span');
     card.append(cardImg);
     card.append(cardName);
     card.append(cardRole);
+    cardImg.classList.add('card-image');
+    cardName.classList.add('card-name');
+    cardRole.classList.add('card-role');
+}
+
+// creo funzione per visualizzare le immagini nelle card
+function populateImgs(array1, array2) {
+    for(i = 0; i < array2.length; i++) {
+        array2[i].src = array1[i]['image'];
+    }
+}
+
+// creo funzione per visualizzare i nomi nelle card
+function populateNames(array1, array2) {
+    for (i = 0; i < array2.length; i++) {
+        array2[i].innerText = `${array1[i]['name']}`;
+    }
+}
+
+// creo funzione per visualizzare i ruoli nelle card
+function populateRoles(array1, array2) {
+    for (i = 0; i < array2.length; i++) {
+        array2[i].innerText = `${array1[i]['role']}`;
+    }
 }

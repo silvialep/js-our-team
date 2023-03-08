@@ -44,5 +44,15 @@ body {
 }
 
 .card {
-    width: calc(100% / 3 - (10px / 2));
+    width: calc(100% / 3 - (10px));
+    padding-bottom: 30px;
+}
+
+.card-image {
+    width: 100%;
+    object-fit: contain;
+}
+
+.card-name, .card-role {
+    display: block;
 }
