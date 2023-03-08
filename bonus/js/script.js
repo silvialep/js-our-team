@@ -20,7 +20,7 @@ let myTeam = [
     {
         name: 'Wayne Barnett',
         role: 'Founder & CEO',
-        image: 'wayne-barnett-founder-ceo.jpg'
+        image: 'img/wayne-barnett-founder-ceo.jpg'
     },
     {
         name: 'Angela Caroll',

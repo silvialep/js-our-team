@@ -1,7 +1,6 @@
 /*
 
-BONUS 1:
-Trasformare la stringa foto in una immagine effettiva
+
 BONUS 2:
 Organizzare i singoli membri in card/schede
 Consigli del giorno:
@@ -21,32 +20,32 @@ let myTeam = [
     {
         name: 'Wayne Barnett',
         role: 'Founder & CEO',
-        image: 'wayne-barnett-founder-ceo.jpg'
+        image: 'img/wayne-barnett-founder-ceo.jpg'
     },
     {
         name: 'Angela Caroll',
         role: 'Chief Editor',
-        image: 'angela-caroll-chief-editor.jpg'
+        image: 'img/angela-caroll-chief-editor.jpg'
     },
     {
         name: 'Walter Gordon',
         role: 'Office Manager',
-        image: 'walter-gordon-office-manager.jpg'
+        image: 'img/walter-gordon-office-manager.jpg'
     },
     {
         name: 'Angela Lopez',
         role: 'Social Media Manager',
-        image: 'angela-lopez-social-media-manager.jpg'
+        image: 'img/angela-lopez-social-media-manager.jpg'
     },
     {
         name: 'Scott Estrada',
         role: 'Developer',
-        image: 'scott-estrada-developer.jpg'
+        image: 'img/scott-estrada-developer.jpg'
     },
     {
         name: 'Barbara Ramos',
         role: 'Graphic Designer',
-        image: 'barbara-ramos-graphic-designer.jpg'
+        image: 'img/barbara-ramos-graphic-designer.jpg'
     }
 ];
 
@@ -74,8 +73,15 @@ let containerEl = document.getElementById('container');
 
 for (i = 0; i < myTeam.length; i++) {
     for (let key in myTeam[i]) {
-        let newDiv = document.createElement('div');
-        containerEl.append(newDiv);
-        newDiv.innerText = `${key}: ${myTeam[i][key]}`;
+        // BONUS 1: trasformo la stringa foto in una immagine effettiva
+        if (key == 'image') {
+            let newImg = document.createElement('img');
+            containerEl.append(newImg);
+            newImg.src = `${myTeam[i][key]}`;
+        } else {
+            let newDiv = document.createElement('div');
+            containerEl.append(newDiv);
+            newDiv.innerText = `${key}: ${myTeam[i][key]}`;
+        }
     }
 }
