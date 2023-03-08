@@ -73,3 +73,13 @@ for(i = 0; i < myTeam.length; i++) {
 
 
 // stampo le stesse informazioni su DOM sottoforma di stringhe
+
+let containerEl = document.getElementById('container');
+
+for (i = 0; i < myTeam.length; i++) {
+    for (let key in myTeam[i]) {
+        let newDiv = document.createElement('div');
+        containerEl.append(newDiv);
+        newDiv.innerText = `${key}: ${myTeam[i][key]}`;
+    }
+}
