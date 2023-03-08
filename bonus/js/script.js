@@ -1,7 +1,6 @@
 /*
 
-BONUS 1:
-Trasformare la stringa foto in una immagine effettiva
+
 BONUS 2:
 Organizzare i singoli membri in card/schede
 Consigli del giorno:
@@ -79,3 +78,6 @@ for (i = 0; i < myTeam.length; i++) {
         newDiv.innerText = `${key}: ${myTeam[i][key]}`;
     }
 }
+
+
+// BONUS 1: trasformo la stringa foto in una immagine effettiva
