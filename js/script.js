@@ -40,7 +40,6 @@ let myTeam = [
 console.log(myTeam);
 
 
-
 // stampo su console, per ogni membro del team, le informazioni di nome, ruolo e la stringa della foto
 
 
@@ -52,29 +51,26 @@ for(i = 0; i < myTeam.length; i++) {
 
 
 
-
-
-// stampo le stesse informazioni su DOM sottoforma di stringhe
-
-
-
 let containerEl = document.getElementById('container');
 let cardsContEl = document.getElementById('cards-container');
 
 
 
 
-
+// genero le cards
 for (i = 0; i < myTeam.length; i++) {
     createCard(cardsContEl);
 }
-
+// raggruppo le cards generate in un array da manipolare
 let allCards = document.querySelectorAll('.card');
 
+// strutturo all'interno le cards
 for(i = 0; i < allCards.length; i++) {
     shapeCard(allCards[i]);
 }
 
+
+// visualizzo tutto in pagina
 let allImages = document.querySelectorAll('.card-image');
 populateImgs(myTeam, allImages);
 
@@ -86,7 +82,7 @@ populateRoles(myTeam, allRoles);
 
 
 
-
+// stampo le stesse informazioni su DOM sottoforma di stringhe
 // for (i = 0; i < myTeam.length; i++) {
 //     createCards(cardsContEl, myTeam);
 //     let allCards = document.querySelectorAll('.card');
