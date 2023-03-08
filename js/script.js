@@ -1,16 +1,3 @@
-/*
-
-
-BONUS 2:
-Organizzare i singoli membri in card/schede
-Consigli del giorno:
-Ragioniamo come sempre a step.
-Prima la logica in italiano e poi traduciamo in codice.
-E ricordiamoci che console.log() è nostro amico!
-
-
-
-*/
 
 
 
@@ -70,18 +57,61 @@ for(i = 0; i < myTeam.length; i++) {
 // stampo le stesse informazioni su DOM sottoforma di stringhe
 
 let containerEl = document.getElementById('container');
+let cardsContEl = document.getElementById('cards-container');
+
+
+let cardImg = document.createElement('img');
+let cardName = document.createElement('span');
+let cardRole = document.createElement('span');
+
 
 for (i = 0; i < myTeam.length; i++) {
-    for (let key in myTeam[i]) {
-        // BONUS 1: trasformo la stringa foto in una immagine effettiva
-        if (key == 'image') {
-            let newImg = document.createElement('img');
-            containerEl.append(newImg);
-            newImg.src = `${myTeam[i][key]}`;
-        } else {
-            let newDiv = document.createElement('div');
-            containerEl.append(newDiv);
-            newDiv.innerText = `${key}: ${myTeam[i][key]}`;
-        }
-    }
+    createCard(cardsContEl);
+}
+
+let allCards = document.querySelectorAll('.card');
+console.log(allCards);
+for(i = 0; i < allCards.length; i++) {
+    shapeCard(allCards[i]);
+}
+
+// shapeCard(allCards);
+
+
+// for (i = 0; i < myTeam.length; i++) {
+//     createCards(cardsContEl, myTeam);
+//     let allCards = document.querySelectorAll('.card');
+//     for (let key in myTeam[i]) {
+//         // BONUS 1: trasformo la stringa foto in una immagine effettiva
+//         if (key == 'image') {
+//             let newImg = document.createElement('img');
+//             allCards[i].append(newImg);
+//             newImg.src = `${myTeam[i][key]}`;
+//         } else {
+//             let newSpan = document.createElement('span');
+//             allCards[i].append(newSpan);
+//             newSpan.innerText = `${key}: ${myTeam[i][key]}`;
+//         }
+//     }
+// }
+// 
+
+
+/*
+BONUS 2:
+Organizzare i singoli membri in card/schede
+*/
+
+// creo funzione per generare card
+function createCard(container) {
+    let newDiv = document.createElement('div');
+    container.append(newDiv);
+    newDiv.classList.add('card');
+}
+
+
+function shapeCard(card) {
+    card.append(cardImg);
+    card.append(cardName);
+    card.append(cardRole);
 }
